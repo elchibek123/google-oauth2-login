@@ -1,0 +1,27 @@
+spring:
+    application:
+        name: Google-Oauth2
+    datasource:
+        password: postgres
+        url: jdbc:postgresql://localhost:5432/postgres
+        username: postgres
+    jpa:
+        hibernate:
+            ddl-auto: create
+        show-sql: true
+    security:
+        oauth2:
+            client:
+                registration:
+                    google:
+                        client-id: 380988878614-9373c6ugl97gibejuimtm2q0gk50uv7b.apps.googleusercontent.com
+                        client-secret: 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
+                        redirect-uri: http://localhost:8080/api/auth/google/callback
+        jwt:
+            secret_key: jwt-token
+            expiration: 604800
+
+server:
+    port: 8080
+    error:
+        include-message: always
